@@ -1,6 +1,5 @@
 'use client'
 import React, { useState } from 'react'
-import Image from 'next/image'
 
 const DashboardWrapper = ({children}:{children: React.ReactNode}) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -73,7 +72,7 @@ const DashboardWrapper = ({children}:{children: React.ReactNode}) => {
               <div className="relative group">
                 <input 
                   type="text" 
-                  placeholder="Search products, orders..."
+                  placeholder="Search..."
                   className="pl-10 pr-4 py-2 w-64 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 group-hover:shadow-sm"
                 />
                 <svg className="absolute left-3 top-2.5 w-5 h-5 text-gray-400 group-focus-within:text-blue-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -86,21 +85,18 @@ const DashboardWrapper = ({children}:{children: React.ReactNode}) => {
                 <svg className="w-6 h-6 text-gray-600 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-5 5v-5zM15 17H9a2 2 0 01-2-2V5a2 2 0 012-2h6a2 2 0 012 2v10z" />
                 </svg>
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center animate-pulse">3</span>
               </button>
               
               {/* User Profile */}
               <div className="flex items-center space-x-3 hover:bg-gray-50 px-3 py-2 rounded-lg transition-colors cursor-pointer">
-                <Image 
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" 
-                  alt="Profile"
-                  width={32}
-                  height={32}
-                  className="w-8 h-8 rounded-full ring-2 ring-gray-200 hover:ring-blue-300 transition-all"
-                />
+                <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
+                  <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                </div>
                 <div className="flex flex-col">
-                  <span className="text-sm font-medium text-gray-900">John Doe</span>
-                  <span className="text-xs text-gray-500">Admin</span>
+                  <span className="text-sm font-medium text-gray-900">User</span>
+                  <span className="text-xs text-gray-500">Profile</span>
                 </div>
               </div>
             </div>
